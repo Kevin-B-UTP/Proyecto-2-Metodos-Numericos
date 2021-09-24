@@ -61,6 +61,14 @@ function matriz = gsimple (matriz)
         fprintf('\nMATRIZ DESPUES DE MODIFICAR (2,1) Y (3.1)\n');
         disp(matriz)
         fprintf('\n__________________________________\n');
-
-
+     ##PASO #2 VOLVER 0 LA POSICIÓN (3,2) DE LA MATRIZ
+       valor = matriz(3,2)/matriz(2,2);
+         for columna = 1 : 4   
+             matriz(3,columna) =  ((valor*signo)*matriz(2,columna))+matriz(3,columna);
+         endfor
+        fprintf('\nMATRIZ DESPUES DE MODIFICAR (3,2)\n');
+        disp(matriz)
+        fprintf('\n__________________________________\n');
+      
+      
   endfunction
