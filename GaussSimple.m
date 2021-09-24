@@ -71,7 +71,7 @@ function matriz = gsimple (matriz)
         disp(matriz)
         fprintf('\n__________________________________\n');
         
-      ##DESPEJE,CÁLCULO DE LAS VARIABLES X, Y , Z
+      ## PASO #4 DESPEJE,CÁLCULO DE LAS VARIABLES X, Y , Z
       z = matriz(3,4) / matriz(3,3)
       y = ( matriz(2,4) + matriz(2,3)*z)/matriz(2,2) 
       y = ( matriz(1,4) + matriz(1,3)*z+matriz(1,2)*y)/matriz(1,1)
