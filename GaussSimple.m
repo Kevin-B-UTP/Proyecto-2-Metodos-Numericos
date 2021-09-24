@@ -5,7 +5,7 @@ function matriz = gsimple (matriz)
   ##VARIABLES
   control = 0;
   signo = -1;
-
+  
     
   ##ENCABEZADO
       fprintf('\n__________________________________');
@@ -61,7 +61,8 @@ function matriz = gsimple (matriz)
         fprintf('\nMATRIZ DESPUES DE MODIFICAR (2,1) Y (3.1)\n');
         disp(matriz)
         fprintf('\n__________________________________\n');
-     ##PASO #2 VOLVER 0 LA POSICIÓN (3,2) DE LA MATRIZ
+        
+     ##PASO #3 VOLVER 0 LA POSICIÓN (3,2) DE LA MATRIZ
        valor = matriz(3,2)/matriz(2,2);
          for columna = 1 : 4   
              matriz(3,columna) =  ((valor*signo)*matriz(2,columna))+matriz(3,columna);
@@ -69,6 +70,10 @@ function matriz = gsimple (matriz)
         fprintf('\nMATRIZ DESPUES DE MODIFICAR (3,2)\n');
         disp(matriz)
         fprintf('\n__________________________________\n');
-      
-      
+        
+      ##DESPEJE,CÁLCULO DE LAS VARIABLES X, Y , Z
+      z = matriz(3,4) / matriz(3,3)
+      y = ( matriz(2,4) + matriz(2,3)*z)/matriz(2,2) 
+      y = ( matriz(1,4) + matriz(1,3)*z+matriz(1,2)*y)/matriz(1,1)
+      fprintf('\n__________________________________\n');
   endfunction
