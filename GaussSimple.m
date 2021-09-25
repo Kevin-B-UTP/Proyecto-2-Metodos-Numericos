@@ -3,7 +3,7 @@
 function matriz = gsimple (matriz)
   clc;
   ##VARIABLES
-  control = 0;
+  control=0;
   signo = -1;
   
     
@@ -20,7 +20,7 @@ function matriz = gsimple (matriz)
   
     ##PRIMER CASO
      if (matriz(1,1) == 1 ||matriz(1,1) == -1)
-         control = 1;
+       control = 1;
     
     ##SEGUNDO CASO    
       elseif (matriz(2,1) == 1||matriz(2,1) == -1)
@@ -31,6 +31,7 @@ function matriz = gsimple (matriz)
            matriz(fila-1,columna) = valor_aux;
          endfor
          control = 2;
+         
     ##TERCER CASO 
       elseif (matriz(3,1) == 1 || matriz(3,1) == -1)  
         fila = 3; 
@@ -39,7 +40,7 @@ function matriz = gsimple (matriz)
              matriz(fila,columna)   = matriz(fila-2,columna);
              matriz(fila-2,columna) = valor_aux;
            endfor
-          control = 3;
+         control = 3;
      endif
      
      ##MATRIZ-REAJUSTADA
@@ -63,6 +64,22 @@ function matriz = gsimple (matriz)
         fprintf('\n__________________________________\n');
         
      ##PASO #3 VOLVER 0 LA POSICIÓN (3,2) DE LA MATRIZ
+     
+     
+    ## CASO SI LA POSCICIÓN (2,2) = 0 
+    if( matriz(2,2) == 0)
+      
+         fila = 2;
+         for columna = 1 : 4
+           valor_aux              = matriz(fila,columna);
+           matriz(fila,columna)   = matriz(fila+1,columna);
+           matriz(fila+1,columna) = valor_aux;
+         endfor
+        fprintf('\nMATRIZ DESPUES DE REAJUSTAR LA FILA 2 POR LA 3\n');
+        disp(matriz)
+        fprintf('\n__________________________________\n');
+      ## VOLVER (3,2) = 0 
+    else
        valor = matriz(3,2)/matriz(2,2);
          for columna = 1 : 4   
              matriz(3,columna) =  ((valor*signo)*matriz(2,columna))+matriz(3,columna);
@@ -70,10 +87,10 @@ function matriz = gsimple (matriz)
         fprintf('\nMATRIZ DESPUES DE MODIFICAR (3,2)\n');
         disp(matriz)
         fprintf('\n__________________________________\n');
-        
+    endif 
       ## PASO #4 DESPEJE,CÁLCULO DE LAS VARIABLES X, Y , Z
       z = matriz(3,4) / matriz(3,3)
-      y = ( matriz(2,4) + matriz(2,3)*z)/matriz(2,2) 
-      y = ( matriz(1,4) + matriz(1,3)*z+matriz(1,2)*y)/matriz(1,1)
+      y = ( matriz(2,4) + (signo*(matriz(2,3)*z)))/matriz(2,2) 
+      x = ( matriz(1,4) + (signo*(matriz(1,3)*z))+(signo*(matriz(1,2)*y)))/matriz(1,1)
       fprintf('\n__________________________________\n');
   endfunction
