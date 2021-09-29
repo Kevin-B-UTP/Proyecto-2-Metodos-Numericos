@@ -1,6 +1,6 @@
 ## Metodo Gauss Seidel
 #Tolerancia por defecto: 0.0001
-function matriz = gseidel(matriz, tolerancia)
+function x = gseidel(matriz, tolerancia)
   #Encabezado
   clc;
   fprintf('\n__________________________________');
