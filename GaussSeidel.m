@@ -1,10 +1,10 @@
 ## Metodo Gauss Seidel
-###REVISAR
+#Tolerancia por defecto: 0.0001
 function matriz = gseidel(matriz, tolerancia)
   #Encabezado
   clc;
   fprintf('\n__________________________________');
-  fprintf('\n     MÃ‰TODO GAUSS SEIDEL');
+  fprintf('\n     MÉTODO GAUSS SEIDEL');
   fprintf('\n__________________________________\n');
   #Matriz 
   fprintf('\nMatriz Ingresada\n');
