@@ -4,7 +4,7 @@ function matriz = gseidel(matriz, tolerancia)
   #Encabezado
   clc;
   fprintf('\n__________________________________');
-  fprintf('\n     MÉTODO GAUSS SEIDEL');
+  fprintf('\n     MÃ‰TODO GAUSS SEIDEL');
   fprintf('\n__________________________________\n');
   #Matriz 
   fprintf('\nMatriz Ingresada\n');
@@ -21,7 +21,7 @@ function matriz = gseidel(matriz, tolerancia)
   Ery=1000;
   Erz=1000;
   #Despeje 
-  while (Erx > tolerancia && Ery > tolerancia && Ery > tolerancia)
+  while (Erx > tolerancia && Ery > tolerancia && Erz > tolerancia)
   x = (matriz(1,4)+((signo)*(matriz(1,2))*y)+ ((signo)*(matriz(1,3))*z))/(matriz(1,1));
   y = (matriz(2,4)+((signo)*(matriz(2,1))*x)+ ((signo)*(matriz(2,3))*z))/(matriz(2,2));
   z = (matriz(3,4)+((signo)*(matriz(3,1))*x)+ ((signo)*(matriz(3,2))*y))/(matriz(3,3));
