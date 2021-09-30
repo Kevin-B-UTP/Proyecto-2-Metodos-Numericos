@@ -1,12 +1,13 @@
  %Metodo de GaussJordan%
- clear,clc
+ 
+ clc;
  f1 = input('Ingresa la cantidad de filas: ');
  co = input('Ingresa la cantidad de columnas: ');
  
  for i=1:co
     for j=1:f1
-      fprintf('Fila: %x\n', j)
-      fprintf('Columna: %x', i)
+      fprintf('Fila: %x', j)
+      fprintf(' Columna: %x\n', i)
       r= input ('Numero de fila y columna: ');
       a(j,i)=r;
       j=j+1;
